@@ -12,6 +12,20 @@ class Car{
         case FRSteel
         case BLSteel
         case BRSteel
+        func simpleDescription() -> String {
+            switch self {
+            case .FLSteel:
+                return "FLSteel";
+            case .FRSteel:
+                return "FRSteel";
+            case .BLSteel:
+                return "BLSteel";
+            case .BRSteel:
+                return "BRSteel";
+            default:
+                return "0";
+            }
+        }
     }
     
     //车灯
@@ -39,15 +53,29 @@ class Car{
         return speed;
     }
     
+    func getSteel() -> String {
+        return Steel
+    }
+    
     func start() -> String {
         self.status = true;
         println(self.speed);
         println(self.status)
         return "The car is running now!"
     }
+    
+    func stop() ->String {
+        self.status = false;
+        return "The car has stopped!"
+    }
 }
 
 var newCar = Car(speed: 200, name:"newCar");
 newCar.getSpeed();
+newCar.getSteel();
 newCar.start();
+newCar.stop();
 
+class OldCar:Car {
+    
+}
